@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.caioiox.afirmations.R
@@ -20,8 +21,9 @@ class ItemAdapter(private val context: Context,
     //Dados complexos podem precisar de mais de uma view por item
     //Você provem acesso de cada view aos item de dados em um view holder
     //Cada item de dados é um objeto Affirmation
-    class ItemViewHolder (private val view: View) : RecyclerView.ViewHolder(view){
-        val textview:TextView = view.findViewById(R.id.item_title)
+    class ItemViewHolder (private val view: View) : RecyclerView.ViewHolder(view) {
+        val textview: TextView = view.findViewById(R.id.item_title)
+        val imageView: ImageView = view.findViewById(R.id.item_image)
     }
 
     //Cria novas views(chamado pelo layout manager)
@@ -34,6 +36,7 @@ class ItemAdapter(private val context: Context,
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = dataset[position]
         holder.textview.text = context.resources.getString(item.stringResourceId)
+        holder.imageView.setImageResource(item.imageResourceId)
     }
     //Retorna o tamanho do dataset(chamado pelo layout manager)
     override fun getItemCount() = dataset.size

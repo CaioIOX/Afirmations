@@ -1,8 +1,7 @@
 package com.caioiox.afirmations
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.caioiox.afirmations.adapter.ItemAdapter
 import com.caioiox.afirmations.data.Datasource
